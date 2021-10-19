@@ -31,7 +31,9 @@ class JUnitTest {
 	void addition1() { 
 		assumeTrue(number1 == 10); #執行測試案例的假設
 		
-		assertEquals(3, calculator.add(1, 2)); #測試期望與實際是否相等（期望結果值，class（實際運算值））
+		assertEquals(3, calculator.add(1, 2)); 
+		#測試期望與實際是否相等（期望結果值，class（實際運算值））
+		#成功執行，失敗忽略
 	}
 	@DisplayName("addition2")
 	@Test
