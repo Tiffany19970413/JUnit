@@ -1,4 +1,4 @@
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*; #提供靜態方法，執行測試案例的假設（相對assumeTrue（））
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.*;
@@ -7,14 +7,16 @@ class JUnitTest {
 	
 	static int number1;
 	private Calculator calculator;
-	
-	@BeforeAll
+
+	#所有測試案例之前必須先執行（前提：靜態方法）
+	@BeforeAll 
 	static void initAll() {
 		number1 = -1;
 		
 		System.out.println("The 8 test cases are going to run !!");
 	}
 	
+	# @.Test之前必須先執行（前提：不可靜態方法）
 	@BeforeEach
 	void init() {
 		number1 = 10;
@@ -24,12 +26,12 @@ class JUnitTest {
 		System.out.println(this);
 	}
 	
-	@Test
-	@DisplayName("addition1")
-	void addition1() {
-		assumeTrue(number1 == 10);
+	@Test #進行測試案例
+	@DisplayName("addition1") #自訂測試案例的名稱
+	void addition1() { 
+		assumeTrue(number1 == 10); #執行測試案例的假設
 		
-		assertEquals(3, calculator.add(1, 2));
+		assertEquals(3, calculator.add(1, 2)); #測試期望與實際是否相等（期望結果值，class（實際運算值））
 	}
 	@DisplayName("addition2")
 	@Test
@@ -88,6 +90,7 @@ class JUnitTest {
 		assertEquals(6, calculator.div(18, 3));
 	}
 	
+	# @.Test之後執行（前提：不可靜態方法）
 	@AfterEach
 	void tearDown() {
 		number1 = 0;
@@ -96,6 +99,7 @@ class JUnitTest {
 		calculator = null;
 	}
 	
+	#所有測試案例之後執行（前提：靜態方法）
 	@AfterAll
 	static void tearDownAll() {
 		number1 = -1;
