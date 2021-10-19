@@ -1,8 +1,8 @@
-import static java.time.Duration.ofMillis;
+import static java.time.Duration.ofMillis; #å› ç‚ºç„¡æ³•ç¢ºå®šå¤–éƒ¨classæ˜¯å¦å¯ç”¨ï¼Œæ‰€ä»¥å°å…¥ã€Œè¶…æ™‚å±¬æ€§ã€æ¸¬è©¦ï¼ˆä»¥æ¯«ç§’ç‚ºå–®ä½ï¼‰
 import static java.time.Duration.ofMinutes;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*; #å¼·åˆ¶è¶…æ™‚æ¸¬è©¦
 
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CountDownLatch; #å¤šåŸ·è¡Œç·’æ¸¬è©¦
 
 import org.junit.jupiter.api.Test;
 
@@ -17,10 +17,10 @@ class JUnitTest2 {
 		assertEquals(2, calculator.add(1, 1));
 		assertEquals(4, calculator.multi(2, 2), 
 				"The optional failure message is now the last parameter");
-		//asserEquals¨â¨â¤ñ¸û(¹ê»Ú­È»P¹w´Á­È)¡A¦L¥XÅã¥Ü¤å¦r
+		//asserEqualså…©å…©æ¯”è¼ƒ(å¯¦éš›å€¼èˆ‡é æœŸå€¼)ï¼Œå°å‡ºé¡¯ç¤ºæ–‡å­—
 		assertTrue('a' < 'b', () -> "Assertion messages can be lazily evaluated -- "
 				+ "to avoid constructing complex messages unnecessarily.");
-		//asserTrue³æ¤@¤ñ¸û­È(Ãş¦ü¥¬ªL·§©À¡A¹ê»Ú­È»P¹w´Á­È)¡A¦L¥XÅã¥Ü¤å¦r
+		//asserTrueå–®ä¸€æ¯”è¼ƒå€¼(é¡ä¼¼å¸ƒæ—æ¦‚å¿µï¼Œå¯¦éš›å€¼èˆ‡é æœŸå€¼)ï¼Œå°å‡ºé¡¯ç¤ºæ–‡å­—
 	}
 	
 	@Test
@@ -28,9 +28,9 @@ class JUnitTest2 {
 		assertAll("Person", 
 				() -> assertEquals("Jane", person.getFirstName()),
 				() -> assertEquals("Doe", person.getLastName())
-				//¦]¬°¤@­Ófunction¥u¯à¼g¤J¤@­ÓasserEquals
-				//©Ò¥H¶}asserAllÅı¦P­Ófunction°õ¦æ¦h­Ó´ú¸Õ
-				//()->interfaceªºÂ²¼g
+				//å› ç‚ºä¸€å€‹functionåªèƒ½å¯«å…¥ä¸€å€‹asserEquals
+				//æ‰€ä»¥é–‹asserAllè®“åŒå€‹functionåŸ·è¡Œå¤šå€‹æ¸¬è©¦
+				//()->interfaceçš„ç°¡å¯«
 		);
 	}
 
